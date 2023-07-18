@@ -1,0 +1,37 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+
+
+<div class="col-lg-8 test-p ">
+    <div class="card p-3 h-100 card-soft-primary test-sh">
+                <ul class="responsive-table">
+                        <li class="table-header">
+                            <div class="col col-1">Номер</div>
+                          <div class="col col-2">Дата публикации</div>
+                          <div class="col col-3">Тема</div>
+                          <div class="col col-4">Пройти</div>
+                        </li>
+                        {% for quiz in quizzes %}
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">{{ quiz.id }}</div>
+                          <div class="col col-2" data-label="Customer Name">{{ quiz.published }}</div>
+                          <div class="col col-3" data-label="Amount">{{ quiz.name }}</div>
+                          <div class="col col-4" data-label="Payment Status">
+                              <a href="{% url 'quizzes:display_quiz' quiz.id %}" class="btn btn-primary rounded-pill btn-sm">Пройти</a>
+                          </div>
+                        </li>
+
+
+                {% endfor %}
+</div>
+</div>
+
+<div style="position:absolute; bottom: 0;">
+    <a href="{% url 'profile' %}" class="nav_list-link">
+        <img src="{% static 'main/img/profil.png' %}">
+    </a>
+</div>
+{% endblock %}

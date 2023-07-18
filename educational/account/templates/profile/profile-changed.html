@@ -1,0 +1,51 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Редактировать{% endblock %}
+
+{% block content %}
+
+
+<div class="col-lg-8 test-p">
+    <div class="card p-3 h-100 card-soft-primary test-sh">
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}  <span class="close-btn" onclick="this.parentElement.style.display = 'none';">&times;</span></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="features">
+                <div>
+                <h5>Логин</h5>
+                <input class="form-control" type="text" id="username" name="Имя пользователя" value="{{user.username}}" disabled readonly>
+            </div>
+            <div>
+                <h5>Фамилия</h5>
+                {{user_form.surname}}
+            </div>
+            <div>
+                <h5>Имя</h5>
+                {{user_form.first_name}}
+            </div>
+            <div>
+                <h5>Отчество</h5>
+                {{user_form.last_name}}
+            </div>
+            <div>
+                <h5>E-mail</h5>
+                {{user_form.email}}
+            </div>
+                <br>
+                <div class="button-container" style="text-align: center;">
+                    <button type="submit" class="btn btn-success">Сохранить изменения</button>
+                    <button type="reset" class="btn btn-danger">Сбросить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    {% endif %}
+{% endblock %}

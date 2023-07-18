@@ -11,7 +11,7 @@ body {
 margin-top:50px;
 }
 .bg-bd{
-background:#7f8ca6;
+background:#d8e1f3;
 }
 .form-signin .form-floating:focus-within {
   z-index: 2;
@@ -37,4 +37,84 @@ background:#7f8ca6;
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.btn-ac{
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.test-p{
+  margin:auto;
+}
+.test-sh{
+  box-shadow: 20px 16px 17px 1px #00E5B4;
+}
+.btn-col{
+  background:#00E5B4;
+  border:0px;
+  color:#083E7D;
+}
+.btn-k{
+  background:#FF4387;
+}
+.responsive-table li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .responsive-table .table-header {
+    background-color: #9f9f9f;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .responsive-table .table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  }
+  .responsive-table .col-1 {
+    flex-basis: 10%;
+  }
+  .responsive-table .col-2 {
+    flex-basis: 40%;
+  }
+  .responsive-table .col-3 {
+    flex-basis: 25%;
+  }
+  .responsive-table .col-4 {
+    flex-basis: 25%;
+  }
+  @media all and (max-width: 767px) {
+    .responsive-table .table-header {
+      display: none;
+    }
+    .responsive-table li {
+      display: block;
+    }
+    .responsive-table .col {
+      flex-basis: 100%;
+    }
+    .responsive-table .col {
+      display: flex;
+      padding: 10px 0;
+    }
+    .responsive-table .col:before {
+      color: #6c7a89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+    }
+  }
+div.scroll {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+div.scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
